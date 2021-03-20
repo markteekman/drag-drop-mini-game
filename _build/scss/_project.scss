@@ -1,0 +1,207 @@
+/* -------------------------------- *
+ |  Project specific styles         |
+ * -------------------------------- */
+
+:root {
+  --main-color1: #050b16;
+  --main-color2: #0c182d;
+}
+
+html {
+  font-size: 100%;
+
+  @include breakpoint(medium) { font-size: 150%; }
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: $neutral-900;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+h2 {
+  @include size-24;
+}
+
+a,
+p,
+span {
+  @include size-16;
+}
+
+.success {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: none;
+  overflow: hidden;
+
+  > [class*="message"] h2 {
+    @include size-48;
+
+    animation: fade-in 10 0.15s linear;
+    padding-top: $space-96;
+  }
+
+  > [class*="emoji"] {
+    font-size: 200px;
+    animation: pop-up 1.5s ease-in-out;
+    z-index: 1;
+  }
+
+  > [class*="link"] a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #e35bdc;
+    text-decoration: none;
+    transition: all 0.2s 0.05s ease;
+    padding: 0.1875em 0.1875em 0.0625em;
+    box-shadow: inset 0 -0.475em 0 #e35bdc;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    animation: blink 0.25s 2 ease-in-out;
+    animation-delay: 3s;
+
+    &:focus,
+    &:hover {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 -0.475em 0 transparent;
+    }
+  }
+}
+
+.success.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  background: linear-gradient(to right, #dce35b, #45b649);
+  transition: background-color 1000ms linear;
+}
+
+/* -------------------------------- *
+ |  Pick-up and dropzone            |
+ * -------------------------------- */
+
+[data-pickzone],
+[data-dropzone] {
+  display: flex;
+  padding: 0.5rem;
+  min-height: calc(10.5rem + 6px);
+  border: 3px dotted black;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  @include breakpoint(medium) { min-height: calc(5rem + 6px); }
+}
+
+[data-pickzone] {
+  margin-bottom: $space-24;
+
+  @include breakpoint(medium) {
+    margin-bottom: $space-48;
+  }
+}
+
+[data-dropzone] {
+  border: 3px solid black;
+}
+
+/* -------------------------------- *
+ |  Boxes                           |
+ * -------------------------------- */
+
+.box {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  flex: 3.7rem 0 1;
+  margin: 5px;
+}
+
+[data-number="1"] { background: linear-gradient(to right, #f12711, #f5af19); }
+[data-number="2"] { background: linear-gradient(to right, #56ab2f, #a8e063); }
+[data-number="3"] { background: linear-gradient(to right, #44a08d, #093637); }
+[data-number="4"] { background: linear-gradient(to right, #00b4db, #0083b0); }
+[data-number="5"] { background: linear-gradient(to right, #000428, #004e92); }
+[data-number="6"] { background: linear-gradient(to right, #ad5389, #3c1053); }
+[data-number="7"] { background: linear-gradient(to right, #485563, #29323c); }
+[data-number="8"] { background: linear-gradient(to right, #ff416c, #ff4b2b); }
+[data-number="9"] { background: linear-gradient(to right, #f0c, #339); }
+[data-number="10"] { background: linear-gradient(to right, #f7971e, #ffd200); }
+
+/* -------------------------------- *
+ |  Styles                          |
+ * -------------------------------- */
+
+[data-draggable] {
+  cursor: move;
+  touch-action: none;
+}
+
+[data-draggable][data-dragging="true"] {
+  position: absolute;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+
+.preview {
+  background: #eee;
+  border: 4px dotted #aaa;
+}
+
+/* -------------------------------- *
+ |  Keyframes                       |
+ * -------------------------------- */
+
+@keyframes pop-up {
+  0% { transform: scale(0.1); }
+  50% { transform: scale(2.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fade-in {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

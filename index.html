@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Lato:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/make-it-pretty.css">
+
+      <!-- javascript -->
+      <script defer src="js/make-it-work.js"></script>
+      <script defer src="js/fontawesome.js"></script>
+
+      <!-- open graph -->
+      <meta property="og:title" content="Drag Drop Mini Game">
+      <meta property="og:description" content="Sleep de nummers in de goede volgorde! Een JavaScript Drag and Drop mini game met behulp van Pointerevents en Node.cloneNode().">
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://markteekman.nl/levelup/drag-drop-mini-game">
+      <meta property="og:image" content="img/og-level-drag-drop-mini-game.jpg">
+
+      <!-- title -->
+      <title>Drag Drop Mini Game</title>
+    </head>
+      <body>
+
+      <!-- main -->
+      <main>
+        <section>
+          <div class="container">
+            <div class="grid space-32">
+              <div class="cell">
+
+                <h2>Pak de nummers op..</h2>
+                <div data-pickzone>
+                  <div class="box" data-draggable data-number="3">3</div>
+                  <div class="box" data-draggable data-number="6">6</div>
+                  <div class="box" data-draggable data-number="7">7</div>
+                  <div class="box" data-draggable data-number="1">1</div>
+                  <div class="box" data-draggable data-number="8">8</div>
+                  <div class="box" data-draggable data-number="5">5</div>
+                  <div class="box" data-draggable data-number="2">2</div>
+                  <div class="box" data-draggable data-number="4">4</div>
+                </div>
+
+                <h2>En zet ze in de juiste volgorde!</h2>
+                <p>Tip: je kunt de boxjes herorganiseren.</p>
+                <div data-dropzone></div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- /main -->
+
+    <div class="success">
+      <div class="succes__link">
+        <a class="fancy-link" href="https://markteekman.nl/levelup/">MEER LEVELS</a>
+      </div><div class="success__message">
+        <h2>GOED GEDAAN!</h2>
+      </div>
+      <div class="succes__emoji">
+        🎉
+      </div>
+    </div>
+
+  </body>
+</html>
