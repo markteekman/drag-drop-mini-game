@@ -53,7 +53,7 @@ span {
   > [class*="message"] h2 {
     @include size-48;
 
-    animation: fade-in 10 0.15s linear;
+    animation: rotate 10 0.15s linear;
     padding-top: $space-96;
   }
 
@@ -195,7 +195,7 @@ span {
   flex-direction: column;
   align-items: flex-start;
   opacity: 0;
-  animation: appear 1s forwards 2s;
+  animation: fade-in 1s forwards 2s;
 
   .fancy-link {
     &:focus,
@@ -218,7 +218,7 @@ span {
   100% { transform: scale(1); }
 }
 
-@keyframes fade-in {
+@keyframes rotate {
   0% { transform: rotate(0deg); }
   50% { transform: rotate(180deg); }
   100% { transform: rotate(360deg); }
@@ -241,7 +241,7 @@ span {
   }
 }
 
-@keyframes appear {
+@keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
